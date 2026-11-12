@@ -1,0 +1,17 @@
+{
+  "id": "ext-linkedin-pilot-001",
+  "created_at": "2026-11-11T19:30:00Z",
+  "is_external": true,
+  "platform": "linkedin",
+  "author": {
+    "handle": "brazilian-maritime-pilots",
+    "display_name": "Praticagem do Brasil • LinkedIn",
+    "role": "External Maritime Feed • LinkedIn",
+    "profile_url": "https://www.linkedin.com"
+  },
+  "media_url": "./content/posts/media/turning-circle.svg",
+  "headline": "Manobra de Evolução de Suezmax com 2 Rebocadores ASD",
+  "caption": "Caso real de evolução em bacia de evolução restrita com corrente de vazante de 2,5 nós. Espaço reservado para sincronização automática das suas contas reais do LinkedIn.",
+  "external_url": "https://www.linkedin.com",
+  "tags": ["LinkedInFeed", "PraticagemReal", "TugOps"]
+}

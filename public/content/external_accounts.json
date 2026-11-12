@@ -1,0 +1,20 @@
+{
+  "accounts": [
+    {
+      "id": "linkedin-maritime-pilots",
+      "platform": "linkedin",
+      "handle": "brazilian-maritime-pilots",
+      "display_name": "Praticagem do Brasil • LinkedIn",
+      "feed_url": "",
+      "enabled": true
+    },
+    {
+      "id": "instagram-shiphandling",
+      "platform": "instagram",
+      "handle": "shiphandling.pro",
+      "display_name": "Shiphandling & Tug Ops • IG",
+      "feed_url": "",
+      "enabled": true
+    }
+  ]
+}

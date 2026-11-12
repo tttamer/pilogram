@@ -1,0 +1,90 @@
+[
+  {
+    "id": "crenshaw.shiphandling",
+    "handle": "crenshaw.shiphandling",
+    "display_name": "Capt. R. S. Crenshaw Jr.",
+    "avatar_color": "from-sky-500 to-blue-700",
+    "avatar_initials": "RC",
+    "section_id": "sec-1",
+    "section_name": "Seção I – Manobrabilidade",
+    "bio": "O Prático Militar Clássico • Forces Affecting the Ship",
+    "verified": true
+  },
+  {
+    "id": "pna.lewis",
+    "handle": "pna.lewis.sname",
+    "display_name": "Lewis • PNA (Vol. II & III)",
+    "avatar_color": "from-indigo-500 to-purple-700",
+    "avatar_initials": "PNA",
+    "section_id": "sec-1",
+    "section_name": "Seção I – Manobrabilidade",
+    "bio": "SNAME • Resistência, Propulsão e Controlabilidade",
+    "verified": true
+  },
+  {
+    "id": "arte.naval",
+    "handle": "maurilio.artenaval",
+    "display_name": "Comte. Maurílio • Arte Naval",
+    "avatar_color": "from-amber-500 to-orange-700",
+    "avatar_initials": "AN",
+    "section_id": "sec-2",
+    "section_name": "Seção II – Arte Naval",
+    "bio": "Marinha do Brasil • Amarração, Fundeio e Cabos",
+    "verified": true
+  },
+  {
+    "id": "aguas.restritas",
+    "handle": "macelrevey.squat",
+    "display_name": "MacElrevey & Tug Use in Port",
+    "avatar_color": "from-emerald-500 to-teal-700",
+    "avatar_initials": "AR",
+    "section_id": "sec-3",
+    "section_name": "Seção III – Águas Restritas",
+    "bio": "Squat, Bank Effect, Interação e Rebocadores ASD",
+    "verified": true
+  },
+  {
+    "id": "legislacao.normam",
+    "handle": "normam12.dpc",
+    "display_name": "DPC • LESTA & NORMAM-311",
+    "avatar_color": "from-rose-500 to-red-700",
+    "avatar_initials": "DP",
+    "section_id": "sec-4",
+    "section_name": "Seção IV – Legislação",
+    "bio": "LESTA, RLESTA e Normas da Autoridade Marítima",
+    "verified": true
+  },
+  {
+    "id": "migueles.bowditch",
+    "handle": "miguens.bowditch",
+    "display_name": "Miguens & Bowditch • Nav",
+    "avatar_color": "from-cyan-500 to-sky-700",
+    "avatar_initials": "MB",
+    "section_id": "sec-5",
+    "section_name": "Seção V – Meteo e Navegação",
+    "bio": "Navegação Eletrônica, Radar/ARPA, Marés e Meteorologia",
+    "verified": true
+  },
+  {
+    "id": "imo.smcp.cis",
+    "handle": "imo.smcp.comms",
+    "display_name": "IMO SMCP & Código CIS",
+    "avatar_color": "from-yellow-500 to-amber-700",
+    "avatar_initials": "CI",
+    "section_id": "sec-6",
+    "section_name": "Seção VI – Comunicações",
+    "bio": "Fraseologia Padrão IMO e Sinais Internacionais",
+    "verified": true
+  },
+  {
+    "id": "ripeam.colregs",
+    "handle": "ripeam72.colregs",
+    "display_name": "RIPEAM-72 • COLREGs",
+    "avatar_color": "from-fuchsia-500 to-pink-700",
+    "avatar_initials": "72",
+    "section_id": "sec-7",
+    "section_name": "Seção VII – Conhecimentos Gerais",
+    "bio": "Regras de Governo, Luzes, Marcas e Sinais Sonoros",
+    "verified": true
+  }
+]

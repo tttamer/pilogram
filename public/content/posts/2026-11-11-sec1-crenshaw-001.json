@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-11-sec1-crenshaw-001",
+  "created_at": "2026-11-11T22:00:00Z",
+  "batch_cycle": 1,
+  "persona_id": "crenshaw.shiphandling",
+  "section_id": "sec-1",
+  "source": {
+    "book": "Crenshaw – Naval Shiphandling (4ª ed.)",
+    "chapter": "Cap. 2 – Forces Affecting the Ship",
+    "pages": "p. 18–24",
+    "anchor_concept": "Quatro Efeitos do Hélice no Casco Monohélice"
+  },
+  "format": "flashcard_flip",
+  "slides": [
+    {
+      "type": "question",
+      "title": "Partida do Repouso com Hélice de Passo Direito",
+      "prompt": "Em um navio monohélice de passo direito (rotação horária em marcha AV) partindo do repouso sem vento/corrente, para onde caem a POPA e a PROA inicialmente?",
+      "media_url": "./content/posts/media/ship-vectors.svg"
+    },
+    {
+      "type": "answer",
+      "title": "Popa para Boreste • Proa para Bombordo",
+      "body": "A pressão lateral das pás (Side Force) predomina no início antes de o navio ganhar seguimento: a pá inferior atua em água mais profunda e densa que a superior, empurrando a popa para Boreste.",
+      "exam_tip": "Pegadinha clássica: Em marcha a ré (AR), tanto a pressão lateral quanto a corrente de descarga na carena empurram a popa fortemente para Bombordo (proa para Boreste)."
+    }
+  ],
+  "infographic": null,
+  "video": null,
+  "caption": "Toque no card para virar! Regra número 1 do Crenshaw para manobra de navio monohélice. #Manobrabilidade #Crenshaw #PSCPP",
+  "tags": ["Manobrabilidade", "Crenshaw", "Hélice", "SideForce"],
+  "difficulty": 2
+}
