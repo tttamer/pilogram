@@ -24,7 +24,7 @@ describe('Build, Initial cPanel Zip & Loop Scripts', () => {
     expect(listing).toContain('api/exhausted.php');
     expect(listing).toContain('api/status.php');
     expect(listing).toContain('content/personas.json');
-    expect(listing).toContain('content/posts/2026-11-11-sec1-crenshaw-001.json');
+    expect(listing).toContain('content/posts/2026-11-12-sec7-colregs-009-nuc.json');
   });
 
   it('runs check-and-loop.sh locally against state.json and reports loop status', () => {

@@ -13,29 +13,13 @@ import type {
 
 import personasData from '../../public/content/personas.json';
 import stateData from '../../public/content/state.json';
-import post1 from '../../public/content/posts/2026-11-11-sec1-crenshaw-001.json';
-import post2 from '../../public/content/posts/2026-11-11-sec1-pna-002.json';
-import post3 from '../../public/content/posts/2026-11-11-sec2-artenaval-003.json';
-import post4 from '../../public/content/posts/2026-11-11-sec3-squat-004.json';
-import post5 from '../../public/content/posts/2026-11-11-sec4-normam-005.json';
-import post6 from '../../public/content/posts/2026-11-11-sec5-bowditch-006.json';
-import post7 from '../../public/content/posts/2026-11-11-sec6-cis-007.json';
-import post8 from '../../public/content/posts/2026-11-11-sec7-colregs-008.json';
-import ext1 from '../../public/content/external/ext-linkedin-pilot-001.json';
-import ext2 from '../../public/content/external/ext-ig-shiphandling-002.json';
+
+const postModules = import.meta.glob('../../public/content/posts/*.json', { eager: true });
+const extModules = import.meta.glob('../../public/content/external/*.json', { eager: true });
 
 const BUNDLED_PERSONAS = personasData as Persona[];
-const BUNDLED_STUDY_POSTS = [
-  post1,
-  post2,
-  post3,
-  post4,
-  post5,
-  post6,
-  post7,
-  post8,
-] as StudyPost[];
-const BUNDLED_EXTERNAL_POSTS = [ext1, ext2] as ExternalPost[];
+const BUNDLED_STUDY_POSTS = Object.values(postModules).map((mod: any) => mod.default || mod) as StudyPost[];
+const BUNDLED_EXTERNAL_POSTS = Object.values(extModules).map((mod: any) => mod.default || mod) as ExternalPost[];
 const BUNDLED_STATE = stateData as ServerLoopState;
 
 export function useTimeline() {

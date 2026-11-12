@@ -54,30 +54,42 @@ describe('timelineEngine — Weighted Randomization & Loop Logic', () => {
     });
 
     expect(result.cycle_reset_triggered).toBe(true);
-    expect(result.posts.length).toBeGreaterThanOrEqual(8);
+    expect(result.posts.length).toBeGreaterThanOrEqual(studyPosts.length);
   });
 
   it('handles section_filter when all section posts were already seen without triggering global cycle reset (Review Focus #4)', () => {
-    const sec1Ids = studyPosts
-      .filter((p) => p.section_id === 'sec-1')
+    const targetSection = studyPosts[0].section_id;
+    const sectionIds = studyPosts
+      .filter((p) => p.section_id === targetSection)
       .map((p) => p.id);
     const result = buildTimelineBatch(studyPosts, externalPosts, personas, {
       seed: 77,
-      section_filter: 'sec-1',
-      seen_ids: sec1Ids,
+      section_filter: targetSection,
+      seen_ids: sectionIds,
       bookmarked_ids: [],
       limit: 10,
     });
 
     expect(result.cycle_reset_triggered).toBe(false);
-    expect(result.posts.length).toBe(sec1Ids.length);
+    expect(result.posts.length).toBe(sectionIds.length);
     expect(
-      result.posts.every((p) => !p.is_external && p.section_id === 'sec-1')
+      result.posts.every((p) => !p.is_external && p.section_id === targetSection)
     ).toBe(true);
   });
 
   it('avoids placing 3+ consecutive posts from the same section when multiple sections exist (Review Focus #5)', () => {
-    const result = buildTimelineBatch(studyPosts, [], personas, {
+    // Multi-section mock deck
+    const multiSectionPosts: StudyPost[] = [
+      { ...studyPosts[0], id: 'post-a1', section_id: 'sec-1' },
+      { ...studyPosts[0], id: 'post-a2', section_id: 'sec-1' },
+      { ...studyPosts[0], id: 'post-a3', section_id: 'sec-1' },
+      { ...studyPosts[0], id: 'post-b1', section_id: 'sec-2' },
+      { ...studyPosts[0], id: 'post-b2', section_id: 'sec-2' },
+      { ...studyPosts[0], id: 'post-c1', section_id: 'sec-3' },
+      { ...studyPosts[0], id: 'post-c2', section_id: 'sec-3' },
+    ];
+
+    const result = buildTimelineBatch(multiSectionPosts, [], personas, {
       seed: 2026,
       section_filter: 'all',
       seen_ids: [],

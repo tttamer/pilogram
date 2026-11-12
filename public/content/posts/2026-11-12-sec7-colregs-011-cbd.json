@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-12-sec7-colregs-011-cbd",
+  "created_at": "2026-11-12T09:42:00Z",
+  "batch_cycle": 1,
+  "persona_id": "ripeam.colregs",
+  "section_id": "sec-7",
+  "source": {
+    "book": "RIPEAM-72 (COLREGs)",
+    "chapter": "Parte C – Luzes e Marcas • Regra 28",
+    "pages": "Regra 28",
+    "anchor_concept": "Embarcação Restrita devido ao seu Calado (CBD)"
+  },
+  "format": "flashcard_flip",
+  "slides": [
+    {
+      "type": "question",
+      "title": "Regra 28 • Embarcação Restrita pelo Calado (CBD)",
+      "prompt": "Quem tem o direito de exibir a sinalização de CBD, quais luzes e marcas são exigidas, e o que ocorre com as luzes ordinárias de mastro de 225°?",
+      "media_url": "./content/posts/media/colregs-cbd.svg"
+    },
+    {
+      "type": "answer",
+      "title": "3 Vermelhas 360° + Mastro Normal • Dia: 1 Cilindro Preto",
+      "body": "• Quem pode: Exclusivo para embarcação de propulsão mecânica (power-driven vessel).\n• Noite: 3 luzes circulares vermelhas (360°) em linha vertical onde melhor possam ser vistas.\n• Luzes de navegação ordinárias: MANTÉM acesas as luzes brancas de mastro (225°), luzes de bordo (BB Vermelho, BE Verde) e alcançado (Branca 135°).\n• Dia: 1 marca em forma de cilindro preto.",
+      "exam_tip": "PEGADINHAS FAVORITAS DA BANCA: (1) O texto diz expressamente 'poderá exibir' (não é obrigação taxativa como na NUC). (2) Não se aplica a veleiro ou embarcação a remos. (3) Ao contrário de NUC, CBD MANTÉM acesas as luzes brancas de mastro!"
+    }
+  ],
+  "infographic": null,
+  "video": null,
+  "caption": "Toque no card para virar! Regra 28 (CBD) do RIPEAM: 3 luzes vermelhas no mastro e o cilindro preto diurno. #RIPEAM #COLREGs #Regra28 #CBD #CaladoRestrito #PSCPP",
+  "tags": ["RIPEAM", "COLREGs", "Regra28", "CBD", "CaladoRestrito"],
+  "difficulty": 2
+}

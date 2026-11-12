@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none">
+  <defs>
+    <filter id="red-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#EF4444" flood-opacity="0.9"/>
+    </filter>
+    <filter id="green-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#10B981" flood-opacity="0.9"/>
+    </filter>
+    <filter id="white-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#FFFFFF" flood-opacity="0.9"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="320" rx="16" fill="#090D16"/>
+  <rect x="1" y="1" width="398" height="318" rx="15" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="200" y="28" fill="#F8FAFC" font-size="13.5" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">RIPEAM REGRA 28 • CALADO RESTRITO (CBD)</text>
+  <line x1="20" y1="38" x2="380" y2="38" stroke="#334155" stroke-width="1"/>
+
+  <!-- Split Screen: Left = Noite / Right = Dia -->
+  <!-- Left: NOITE -->
+  <rect x="20" y="50" width="170" height="215" rx="8" fill="#0F172A" stroke="#1E293B"/>
+  <text x="105" y="70" fill="#94A3B8" font-size="11" font-weight="600" font-family="system-ui, sans-serif" text-anchor="middle">NOITE (LUZES)</text>
+
+  <!-- Mastro e yardarm -->
+  <line x1="105" y1="85" x2="105" y2="195" stroke="#475569" stroke-width="2.5"/>
+  <line x1="60" y1="195" x2="150" y2="195" stroke="#475569" stroke-width="2.5"/>
+
+  <!-- Masthead light (White 225°) on top -->
+  <circle cx="105" cy="85" r="7" fill="#F8FAFC" filter="url(#white-glow)"/>
+  <text x="105" y="78" fill="#F8FAFC" font-size="7.5" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">Mastro (225°)</text>
+
+  <!-- 3 All-round Red Lights (Vertical) -->
+  <circle cx="105" cy="110" r="7.5" fill="#EF4444" filter="url(#red-glow)"/>
+  <circle cx="105" cy="130" r="7.5" fill="#EF4444" filter="url(#red-glow)"/>
+  <circle cx="105" cy="150" r="7.5" fill="#EF4444" filter="url(#red-glow)"/>
+
+  <text x="105" y="172" fill="#F87171" font-size="9" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">3 Vermelhas 360°</text>
+
+  <!-- Sidelights: BB (Red) on left, BE (Green) on right -->
+  <circle cx="60" cy="195" r="6" fill="#EF4444" filter="url(#red-glow)"/>
+  <text x="45" y="210" fill="#EF4444" font-size="8.5" font-weight="bold" font-family="system-ui, sans-serif">BB (Red)</text>
+
+  <circle cx="150" cy="195" r="6" fill="#10B981" filter="url(#green-glow)"/>
+  <text x="130" y="210" fill="#10B981" font-size="8.5" font-weight="bold" font-family="system-ui, sans-serif">BE (Verde)</text>
+
+  <text x="105" y="235" fill="#CBD5E1" font-size="9" font-family="system-ui, sans-serif" text-anchor="middle">+ Luzes normais de propulsão</text>
+  <text x="105" y="250" fill="#38BDF8" font-size="8.5" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">(Mastro + Bordos + Alcançado)</text>
+
+  <!-- Right: DIA -->
+  <rect x="210" y="50" width="170" height="215" rx="8" fill="#0F172A" stroke="#1E293B"/>
+  <text x="295" y="70" fill="#94A3B8" font-size="11" font-weight="600" font-family="system-ui, sans-serif" text-anchor="middle">DIA (MARCA)</text>
+
+  <line x1="295" y1="85" x2="295" y2="200" stroke="#475569" stroke-width="2.5"/>
+
+  <!-- Black Cylinder (Can) shape -->
+  <rect x="280" y="110" width="30" height="60" rx="4" fill="#020617" stroke="#94A3B8" stroke-width="2"/>
+  <ellipse cx="295" cy="110" rx="15" ry="5" fill="#334155" stroke="#94A3B8" stroke-width="1.5"/>
+  <ellipse cx="295" cy="170" rx="15" ry="5" fill="#020617" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <text x="295" y="200" fill="#E2E8F0" font-size="10.5" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">1 CILINDRO PRETO</text>
+  <text x="295" y="218" fill="#94A3B8" font-size="8.5" font-family="system-ui, sans-serif" text-anchor="middle">(Cylinder / Can shape)</text>
+  <text x="295" y="245" fill="#FBBF24" font-size="8.5" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">Apenas embarcação de</text>
+  <text x="295" y="257" fill="#FBBF24" font-size="8.5" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">propulsão mecânica!</text>
+
+  <!-- Footer Tip -->
+  <rect x="20" y="275" width="360" height="32" rx="6" fill="#1E1B4B" stroke="#4338CA"/>
+  <text x="200" y="295" fill="#E0E7FF" font-size="10" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">⚠️ "PODERÁ exibir" (prerrogativa, não obrigação estrita como NUC/RAM)</text>
+</svg>

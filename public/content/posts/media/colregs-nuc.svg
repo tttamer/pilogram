@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" fill="none">
+  <defs>
+    <!-- Glow filter for lights -->
+    <filter id="red-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#EF4444" flood-opacity="0.9"/>
+    </filter>
+    <filter id="green-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#10B981" flood-opacity="0.9"/>
+    </filter>
+    <filter id="white-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#FFFFFF" flood-opacity="0.9"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="320" rx="16" fill="#090D16"/>
+  <rect x="1" y="1" width="398" height="318" rx="15" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- Header -->
+  <text x="200" y="28" fill="#F8FAFC" font-size="14" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">RIPEAM REGRA 27(a) • SEM GOVERNO (NUC)</text>
+  <line x1="20" y1="38" x2="380" y2="38" stroke="#334155" stroke-width="1"/>
+
+  <!-- Split Screen: Left = Noite / Right = Dia -->
+  <!-- Left Side: NOITE -->
+  <rect x="20" y="50" width="170" height="215" rx="8" fill="#0F172A" stroke="#1E293B"/>
+  <text x="105" y="70" fill="#94A3B8" font-size="11" font-weight="600" font-family="system-ui, sans-serif" text-anchor="middle">NOITE (LUZES)</text>
+
+  <!-- Ship mast silhouette -->
+  <line x1="105" y1="85" x2="105" y2="185" stroke="#475569" stroke-width="3"/>
+  <line x1="65" y1="185" x2="145" y2="185" stroke="#475569" stroke-width="2.5"/>
+
+  <!-- 2 All-round Red Lights (Vertical) -->
+  <circle cx="105" cy="105" r="9" fill="#EF4444" filter="url(#red-glow)"/>
+  <circle cx="105" cy="105" r="5" fill="#FECACA"/>
+  
+  <circle cx="105" cy="140" r="9" fill="#EF4444" filter="url(#red-glow)"/>
+  <circle cx="105" cy="140" r="5" fill="#FECACA"/>
+
+  <!-- Legend for Red over Red -->
+  <text x="105" y="165" fill="#F87171" font-size="10" font-weight="600" font-family="system-ui, sans-serif" text-anchor="middle">2 Vermelhas 360°</text>
+
+  <!-- Sidelights (when making way) -->
+  <!-- Bombordo (BB) = Red / Left of observer if bow facing us, but let's label explicitly -->
+  <circle cx="65" cy="185" r="6" fill="#EF4444" filter="url(#red-glow)"/>
+  <text x="50" y="202" fill="#EF4444" font-size="9" font-weight="bold" font-family="system-ui, sans-serif">BB (Red)</text>
+
+  <!-- Boreste (BE) = Green -->
+  <circle cx="145" cy="185" r="6" fill="#10B981" filter="url(#green-glow)"/>
+  <text x="125" y="202" fill="#10B981" font-size="9" font-weight="bold" font-family="system-ui, sans-serif">BE (Verde)</text>
+
+  <text x="105" y="235" fill="#CBD5E1" font-size="9.5" font-family="system-ui, sans-serif" text-anchor="middle">Com seguimento: + BB/BE</text>
+  <text x="105" y="250" fill="#EF4444" font-size="9" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">SEM luzes de mastro!</text>
+
+  <!-- Right Side: DIA -->
+  <rect x="210" y="50" width="170" height="215" rx="8" fill="#0F172A" stroke="#1E293B"/>
+  <text x="295" y="70" fill="#94A3B8" font-size="11" font-weight="600" font-family="system-ui, sans-serif" text-anchor="middle">DIA (MARCAS)</text>
+
+  <!-- Mast -->
+  <line x1="295" y1="85" x2="295" y2="210" stroke="#475569" stroke-width="3"/>
+
+  <!-- 2 Black Balls in vertical line -->
+  <circle cx="295" cy="115" r="16" fill="#020617" stroke="#94A3B8" stroke-width="2"/>
+  <circle cx="295" cy="165" r="16" fill="#020617" stroke="#94A3B8" stroke-width="2"/>
+
+  <text x="295" y="235" fill="#E2E8F0" font-size="10" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">2 Esferas Pretas</text>
+  <text x="295" y="250" fill="#94A3B8" font-size="9" font-family="system-ui, sans-serif" text-anchor="middle">Em linha vertical no mastro</text>
+
+  <!-- Footer Tip -->
+  <rect x="20" y="275" width="360" height="32" rx="6" fill="#1E1B4B" stroke="#4338CA"/>
+  <text x="200" y="295" fill="#E0E7FF" font-size="10.5" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">⚠️ FOCO PSCPP: NUNCA exibe luzes de mastro de 225°</text>
+</svg>

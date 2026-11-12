@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-12-sec7-colregs-009-nuc",
+  "created_at": "2026-11-12T09:40:00Z",
+  "batch_cycle": 1,
+  "persona_id": "ripeam.colregs",
+  "section_id": "sec-7",
+  "source": {
+    "book": "RIPEAM-72 (COLREGs)",
+    "chapter": "Parte C – Luzes e Marcas • Regra 27(a)",
+    "pages": "Regra 27(a)",
+    "anchor_concept": "Embarcação sem Governo (Not Under Command - NUC)"
+  },
+  "format": "flashcard_flip",
+  "slides": [
+    {
+      "type": "question",
+      "title": "Regra 27(a) • Embarcação Sem Governo (NUC)",
+      "prompt": "Uma embarcação sem governo navegando COM SEGUIMENTO na água (making way): quais luzes de navegação deve exibir e qual luz padrão é expressamente PROIBIDA?",
+      "media_url": "./content/posts/media/colregs-nuc.svg"
+    },
+    {
+      "type": "answer",
+      "title": "2 Vermelhas 360° + Bordos + Alcançado (SEM Mastro)",
+      "body": "• No mastro (onde melhor possam ser vistas): duas luzes circulares vermelhas (360°) em linha vertical.\n• Com seguimento na água: luzes de bordo (BB Vermelha 112,5° e BE Verde 112,5°) e luz de alcançado (Branca 135°).\n• Sem seguimento: apaga bordos e alcançado (mantém apenas as 2 vermelhas).\n• De dia: duas esferas pretas dispostas verticalmente.",
+      "exam_tip": "PEGADINHA CLÁSSICA DO PSCPP: A embarcação sem governo NUNCA acende a luz branca de mastro (225°). Memorize: NUC com seguimento tem bordos e alcançado, NUNCA luz de mastro!"
+    }
+  ],
+  "infographic": null,
+  "video": null,
+  "caption": "Toque no card para virar! Regra 27(a) do RIPEAM/COLREG decorada: Red over Red no mastro e nada de luz de mastro de 225°. #RIPEAM #COLREGs #Regra27 #NUC #Praticagem #PSCPP",
+  "tags": ["RIPEAM", "COLREGs", "Regra27", "NUC", "LuzesEMarcas"],
+  "difficulty": 2
+}

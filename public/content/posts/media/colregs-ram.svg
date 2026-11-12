@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 340" fill="none">
+  <defs>
+    <filter id="red-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#EF4444" flood-opacity="0.9"/>
+    </filter>
+    <filter id="green-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#10B981" flood-opacity="0.9"/>
+    </filter>
+    <filter id="white-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#FFFFFF" flood-opacity="0.9"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="340" rx="16" fill="#090D16"/>
+  <rect x="1" y="1" width="398" height="338" rx="15" stroke="#1E293B" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="200" y="24" fill="#F8FAFC" font-size="13" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">RIPEAM REGRA 27(b) &amp; 27(d) • MANOBRA RESTRITA (RAM)</text>
+  <line x1="20" y1="32" x2="380" y2="32" stroke="#334155" stroke-width="1"/>
+
+  <!-- Top Half: Regra 27(b) Base (Noite vs Dia) -->
+  <!-- Box 1: Noite (Red-White-Red) -->
+  <rect x="20" y="42" width="170" height="135" rx="8" fill="#0F172A" stroke="#1E293B"/>
+  <text x="105" y="58" fill="#94A3B8" font-size="10" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">RAM BASE • NOITE</text>
+  
+  <line x1="105" y1="65" x2="105" y2="140" stroke="#475569" stroke-width="2.5"/>
+  <!-- Red Top -->
+  <circle cx="105" cy="76" r="7.5" fill="#EF4444" filter="url(#red-glow)"/>
+  <!-- White Middle -->
+  <circle cx="105" cy="98" r="7.5" fill="#F8FAFC" filter="url(#white-glow)"/>
+  <!-- Red Bottom -->
+  <circle cx="105" cy="120" r="7.5" fill="#EF4444" filter="url(#red-glow)"/>
+
+  <text x="105" y="148" fill="#FCA5A5" font-size="9" font-weight="600" font-family="system-ui, sans-serif" text-anchor="middle">Vermelha - Branca - Vermelha</text>
+  <text x="105" y="165" fill="#64748B" font-size="8.5" font-family="system-ui, sans-serif" text-anchor="middle">360° em linha vertical</text>
+
+  <!-- Box 2: Dia (Ball-Diamond-Ball) -->
+  <rect x="210" y="42" width="170" height="135" rx="8" fill="#0F172A" stroke="#1E293B"/>
+  <text x="295" y="58" fill="#94A3B8" font-size="10" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">RAM BASE • DIA</text>
+  
+  <line x1="295" y1="65" x2="295" y2="140" stroke="#475569" stroke-width="2.5"/>
+  <!-- Top Ball -->
+  <circle cx="295" cy="76" r="10" fill="#020617" stroke="#94A3B8" stroke-width="1.5"/>
+  <!-- Diamond Middle -->
+  <polygon points="295,90 305,100 295,110 285,100" fill="#020617" stroke="#94A3B8" stroke-width="1.5"/>
+  <!-- Bottom Ball -->
+  <circle cx="295" cy="122" r="10" fill="#020617" stroke="#94A3B8" stroke-width="1.5"/>
+
+  <text x="295" y="148" fill="#E2E8F0" font-size="9" font-weight="600" font-family="system-ui, sans-serif" text-anchor="middle">Esfera - Losango - Esfera</text>
+  <text x="295" y="165" fill="#64748B" font-size="8.5" font-family="system-ui, sans-serif" text-anchor="middle">Em linha vertical no mastro</text>
+
+  <!-- Bottom Half: Regra 27(d) Dragagem / Obstrução -->
+  <rect x="20" y="185" width="360" height="110" rx="8" fill="#0F172A" stroke="#334155"/>
+  <text x="200" y="202" fill="#38BDF8" font-size="10.5" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">REGRA 27(d) • DRAGAGEM / OBSTRUÇÃO SUBMARINA</text>
+
+  <!-- Left: Bordo Obstruído -->
+  <rect x="30" y="210" width="160" height="75" rx="6" fill="#18181B" stroke="#7F1D1D"/>
+  <text x="110" y="225" fill="#EF4444" font-size="9.5" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">🚫 BORDO OBSTRUÍDO</text>
+  <!-- 2 Red Lights -->
+  <circle cx="70" cy="245" r="7" fill="#EF4444" filter="url(#red-glow)"/>
+  <circle cx="70" cy="265" r="7" fill="#EF4444" filter="url(#red-glow)"/>
+  <!-- 2 Black Balls -->
+  <circle cx="140" cy="245" r="8" fill="#020617" stroke="#EF4444" stroke-width="1.5"/>
+  <circle cx="140" cy="265" r="8" fill="#020617" stroke="#EF4444" stroke-width="1.5"/>
+  <text x="70" y="280" fill="#EF4444" font-size="7.5" font-family="system-ui, sans-serif" text-anchor="middle">2 Vermelhas</text>
+  <text x="140" y="280" fill="#A1A1AA" font-size="7.5" font-family="system-ui, sans-serif" text-anchor="middle">2 Esferas</text>
+
+  <!-- Right: Bordo Livre / Passagem Segura -->
+  <rect x="210" y="210" width="160" height="75" rx="6" fill="#18181B" stroke="#064E3B"/>
+  <text x="290" y="225" fill="#10B981" font-size="9.5" font-weight="bold" font-family="system-ui, sans-serif" text-anchor="middle">✅ PASSAGEM SEGURA (LIVRE)</text>
+  <!-- 2 Green Lights -->
+  <circle cx="250" cy="245" r="7" fill="#10B981" filter="url(#green-glow)"/>
+  <circle cx="250" cy="265" r="7" fill="#10B981" filter="url(#green-glow)"/>
+  <!-- 2 Black Diamonds -->
+  <polygon points="320,238 327,245 320,252 313,245" fill="#020617" stroke="#10B981" stroke-width="1.5"/>
+  <polygon points="320,258 327,265 320,272 313,265" fill="#020617" stroke="#10B981" stroke-width="1.5"/>
+  <text x="250" y="280" fill="#10B981" font-size="7.5" font-family="system-ui, sans-serif" text-anchor="middle">2 Verdes</text>
+  <text x="320" y="280" fill="#A1A1AA" font-size="7.5" font-family="system-ui, sans-serif" text-anchor="middle">2 Losangos</text>
+
+  <!-- Bottom Alert Bar -->
+  <rect x="20" y="303" width="360" height="26" rx="4" fill="#0F172A" stroke="#475569"/>
+  <text x="200" y="320" fill="#CBD5E1" font-size="9" font-family="system-ui, sans-serif" text-anchor="middle">Macete: <tspan fill="#10B981" font-weight="bold">Verde</tspan> = Pode passar • <tspan fill="#EF4444" font-weight="bold">Vermelho</tspan> = Não passe!</text>
+</svg>
