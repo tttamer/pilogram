@@ -10,7 +10,7 @@ describe('PSCPP-Gram Responsive iPhone 14 UI', () => {
   it('renders Instagram header, section stories bar, fake author personas, and study cards in responsive container', async () => {
     render(<App />);
 
-    expect(screen.getByText(/PSCPP•Gram/i)).toBeInTheDocument();
+    expect(screen.getByText(/Pilogram/i)).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Reembaralhar/i })).toBeInTheDocument();
     const storiesNav = screen.getByRole('navigation', { name: /Filtro por Seções do Edital/i });
     expect(within(storiesNav).getByRole('button', { name: /^Seção I\b/i })).toBeInTheDocument();

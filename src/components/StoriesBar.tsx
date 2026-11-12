@@ -13,15 +13,15 @@ const STORIES: Array<{
   subLabel: string;
   gradient: string;
 }> = [
-  { id: 'all', shortLabel: 'Tudo', subLabel: 'Feed Mix', gradient: 'from-pink-500 via-red-500 to-yellow-500' },
-  { id: 'sec-1', shortLabel: 'Seção I', subLabel: 'Manobra', gradient: 'from-sky-400 to-blue-600' },
-  { id: 'sec-2', shortLabel: 'Seção II', subLabel: 'Arte Naval', gradient: 'from-amber-400 to-orange-600' },
-  { id: 'sec-3', shortLabel: 'Seção III', subLabel: 'Restritas', gradient: 'from-emerald-400 to-teal-600' },
-  { id: 'sec-4', shortLabel: 'Seção IV', subLabel: 'NORMAM', gradient: 'from-rose-400 to-red-600' },
-  { id: 'sec-5', shortLabel: 'Seção V', subLabel: 'Nav/Meteo', gradient: 'from-cyan-400 to-sky-600' },
-  { id: 'sec-6', shortLabel: 'Seção VI', subLabel: 'CIS/SMCP', gradient: 'from-yellow-400 to-amber-600' },
-  { id: 'sec-7', shortLabel: 'Seção VII', subLabel: 'RIPEAM', gradient: 'from-fuchsia-400 to-pink-600' },
-  { id: 'external', shortLabel: 'Social', subLabel: 'IG / In', gradient: 'from-violet-400 to-indigo-600' },
+  { id: 'all', shortLabel: 'Todos', subLabel: 'Feed', gradient: 'from-amber-400 via-rose-500 to-purple-600' },
+  { id: 'sec-1', shortLabel: 'Seção I', subLabel: 'Manobra', gradient: 'from-sky-400 via-blue-500 to-indigo-600' },
+  { id: 'sec-2', shortLabel: 'Seção II', subLabel: 'Arte Naval', gradient: 'from-amber-400 via-orange-500 to-red-600' },
+  { id: 'sec-3', shortLabel: 'Seção III', subLabel: 'Restritas', gradient: 'from-emerald-400 via-teal-500 to-cyan-600' },
+  { id: 'sec-4', shortLabel: 'Seção IV', subLabel: 'NORMAM', gradient: 'from-rose-400 via-pink-500 to-rose-600' },
+  { id: 'sec-5', shortLabel: 'Seção V', subLabel: 'Nav/Meteo', gradient: 'from-cyan-400 via-sky-500 to-blue-600' },
+  { id: 'sec-6', shortLabel: 'Seção VI', subLabel: 'CIS/SMCP', gradient: 'from-yellow-400 via-amber-500 to-orange-500' },
+  { id: 'sec-7', shortLabel: 'Seção VII', subLabel: 'RIPEAM', gradient: 'from-fuchsia-400 via-purple-500 to-pink-600' },
+  { id: 'external', shortLabel: 'Social', subLabel: 'IG / In', gradient: 'from-violet-500 via-purple-500 to-indigo-600' },
 ];
 
 export const StoriesBar: React.FC<StoriesBarProps> = ({
@@ -31,9 +31,9 @@ export const StoriesBar: React.FC<StoriesBarProps> = ({
   return (
     <nav
       aria-label="Filtro por Seções do Edital"
-      className="border-b border-zinc-900 bg-black py-3 px-3 overflow-x-auto no-scrollbar"
+      className="border-b border-zinc-900 bg-black pt-3 pb-3.5 px-3.5 overflow-x-auto no-scrollbar"
     >
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-4">
         {STORIES.map((story) => {
           const isActive = activeFilter === story.id;
           return (
@@ -45,17 +45,21 @@ export const StoriesBar: React.FC<StoriesBarProps> = ({
             >
               <div
                 className={`p-[2.5px] rounded-full bg-gradient-to-tr ${story.gradient} ${
-                  isActive ? 'ring-2 ring-white scale-105' : 'opacity-80 group-hover:opacity-100'
-                } transition`}
+                  isActive
+                    ? 'ring-2 ring-white scale-105'
+                    : 'opacity-90 group-hover:opacity-100 hover:scale-[1.02]'
+                } transition-all duration-200`}
               >
-                <div className="w-14 h-14 rounded-full bg-zinc-950 border-2 border-black flex flex-col items-center justify-center">
-                  <span className="text-[11px] font-bold text-white leading-tight">
-                    {story.shortLabel}
-                  </span>
+                <div className="w-[62px] h-[62px] rounded-full bg-zinc-950 p-[2px] flex items-center justify-center">
+                  <div className="w-full h-full rounded-full bg-zinc-900 border border-zinc-800 flex flex-col items-center justify-center">
+                    <span className="text-[11px] font-bold text-white tracking-tight leading-tight">
+                      {story.shortLabel}
+                    </span>
+                  </div>
                 </div>
               </div>
               <span
-                className={`mt-1 text-[10px] ${
+                className={`mt-1.5 text-[11px] tracking-tight ${
                   isActive ? 'text-white font-semibold' : 'text-zinc-400'
                 }`}
               >

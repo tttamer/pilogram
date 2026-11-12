@@ -17,13 +17,13 @@ export const VideoReelPost: React.FC<VideoReelPostProps> = ({
   return (
     <div
       onClick={onInteract}
-      className="bg-gradient-to-b from-emerald-950/50 via-zinc-950 to-zinc-950 border-y border-zinc-800 p-4 iphone:p-5 space-y-4 cursor-pointer"
+      className="bg-zinc-950 border-y border-zinc-900 p-5 space-y-4 cursor-pointer"
     >
       <div className="flex items-center justify-between text-xs">
-        <span className="inline-flex items-center gap-1.5 font-bold text-emerald-400 uppercase tracking-wider text-[11px] iphone:text-xs">
-          <Play className="w-3.5 h-3.5 fill-emerald-400" /> Short Reel ({video.duration_seconds}s)
+        <span className="inline-flex items-center gap-1.5 font-bold text-emerald-400 uppercase tracking-widest text-[10px] iphone:text-[11px] bg-emerald-500/10 px-2.5 py-1 rounded-md border border-emerald-500/20">
+          <Play className="w-3.5 h-3.5 fill-emerald-400" /> Reel ({video.duration_seconds}s)
         </span>
-        <span className="text-zinc-400 text-[11px] iphone:text-xs">{post.source.anchor_concept}</span>
+        <span className="text-zinc-400 text-[11px] font-medium">{post.source.anchor_concept}</span>
       </div>
 
       {video.video_url ? (
@@ -33,25 +33,29 @@ export const VideoReelPost: React.FC<VideoReelPostProps> = ({
           loop
           muted
           playsInline
-          className="w-full rounded-xl max-h-72 object-cover border border-zinc-800"
+          className="w-full rounded-2xl max-h-80 object-cover border border-zinc-800 shadow-md"
         />
       ) : (
         video.animated_svg_url && (
-          <img
-            src={video.animated_svg_url}
-            alt={video.hook_overlay}
-            className="w-full h-40 iphone:h-44 object-contain rounded-xl bg-zinc-950 border border-zinc-800 p-2 animate-pulse"
-          />
+          <div className="rounded-2xl overflow-hidden bg-black/60 border border-zinc-800 p-3 shadow-inner">
+            <img
+              src={video.animated_svg_url}
+              alt={video.hook_overlay}
+              className="w-full h-44 iphone:h-52 object-contain animate-pulse"
+            />
+          </div>
         )
       )}
 
-      <div className="p-3.5 rounded-xl bg-zinc-900/90 border border-zinc-800 space-y-2.5">
-        <h4 className="text-xs iphone:text-sm font-bold text-white">{video.hook_overlay}</h4>
-        <ul className="space-y-1.5">
+      <div className="p-4 rounded-2xl bg-zinc-900/90 border border-zinc-800 space-y-3 shadow-sm">
+        <h4 className="text-sm iphone:text-[15px] font-bold text-white tracking-tight leading-snug">
+          {video.hook_overlay}
+        </h4>
+        <ul className="space-y-2">
           {video.key_takeaways.map((point, idx) => (
             <li
               key={idx}
-              className="flex items-start gap-2 text-xs text-zinc-200 leading-relaxed"
+              className="flex items-start gap-2.5 text-xs iphone:text-sm text-zinc-200 leading-relaxed"
             >
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
               <span>{point}</span>

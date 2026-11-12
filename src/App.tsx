@@ -1,5 +1,5 @@
 import React from 'react';
-import { RefreshCw, X } from 'lucide-react';
+import { RefreshCw, X, Sparkles } from 'lucide-react';
 import { useTimeline } from './hooks/useTimeline';
 import { Header } from './components/Header';
 import { StoriesBar } from './components/StoriesBar';
@@ -29,8 +29,8 @@ export const App: React.FC = () => {
   } = useTimeline();
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 flex justify-center">
-      <div className="w-full max-w-md min-h-screen bg-black border-x border-zinc-900 pb-24">
+    <div className="min-h-screen bg-black text-zinc-100 flex justify-center">
+      <div className="w-full max-w-md min-h-screen bg-black border-x border-zinc-900 pb-28">
         <Header
           cycleCount={cycleCount}
           seenCount={seenIds.length}
@@ -46,13 +46,13 @@ export const App: React.FC = () => {
         />
 
         {loopBanner && (
-          <div className="mx-3 my-2.5 p-3 rounded-xl bg-sky-950/80 border border-sky-500/40 text-xs text-sky-200 flex items-center justify-between gap-2">
-            <span>{loopBanner}</span>
+          <div className="mx-4 my-3 p-3.5 rounded-2xl bg-zinc-900/90 border border-sky-500/40 text-xs text-sky-200 flex items-center justify-between gap-2 shadow-lg">
+            <span className="leading-relaxed">{loopBanner}</span>
             <button
               type="button"
               onClick={dismissBanner}
               aria-label="Fechar aviso"
-              className="text-sky-400 hover:text-white"
+              className="text-sky-400 hover:text-white p-1"
             >
               <X className="w-4 h-4" />
             </button>
@@ -61,16 +61,16 @@ export const App: React.FC = () => {
 
         <main className="divide-y divide-zinc-900">
           {posts.length === 0 ? (
-            <div className="p-8 text-center space-y-3">
+            <div className="p-12 text-center space-y-4">
               <p className="text-sm text-zinc-400">
-                Nenhum post salvo nesta aba ainda.
+                Nenhum post disponível para este filtro.
               </p>
               <button
                 type="button"
                 onClick={() => setSectionFilter('all')}
-                className="px-4 py-2 rounded-full bg-zinc-800 text-xs font-semibold text-white"
+                className="px-5 py-2.5 rounded-full bg-zinc-900 border border-zinc-800 text-xs font-semibold text-white hover:bg-zinc-800 transition"
               >
-                Voltar para o Feed Completo
+                Voltar para o Feed Principal
               </button>
             </div>
           ) : (
@@ -94,15 +94,23 @@ export const App: React.FC = () => {
           )}
         </main>
 
-        {/* End of Timeline Loop Trigger Footer */}
-        <footer className="p-6 text-center space-y-3 border-t border-zinc-900">
-          <p className="text-xs text-zinc-400">
-            Você chegou ao fim deste bloco da timeline (Ciclo #{cycleCount}).
-          </p>
+        {/* End of Timeline Instagram-style catch-up card */}
+        <footer className="p-6 text-center space-y-4 border-t border-zinc-900 bg-zinc-950/60 mt-4 rounded-3xl mx-3">
+          <div className="w-12 h-12 mx-auto rounded-full bg-gradient-to-tr from-sky-400 to-indigo-500 p-[2px] flex items-center justify-center">
+            <div className="w-full h-full rounded-full bg-zinc-950 flex items-center justify-center">
+              <Sparkles className="w-5 h-5 text-sky-400" />
+            </div>
+          </div>
+          <div>
+            <h4 className="text-sm font-bold text-white">Você está em dia com este ciclo!</h4>
+            <p className="text-xs text-zinc-400 mt-1">
+              Ciclo #{cycleCount} finalizado. Clique abaixo para reembaralhar o deck ou solicitar novos posts.
+            </p>
+          </div>
           <button
             type="button"
             onClick={completeAndLoopTimeline}
-            className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg active:scale-[0.99] transition"
+            className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg active:scale-[0.98] transition"
           >
             <RefreshCw className="w-4 h-4" />
             <span>Concluir Timeline & Gerar Novos Posts</span>

@@ -19,7 +19,7 @@ fi
 : "${FTP_REMOTE_DIR:?Missing FTP_REMOTE_DIR in .env.deploy}"
 
 echo "==> [1/3] Committing new or updated posts to Git..."
-git add public/content/ src/ || true
+git add public/ src/ tailwind.config.js index.html scripts/ package.json || true
 if ! git diff --cached --quiet; then
   git commit -m "content: add/update PSCPP-Gram study posts ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
   if [[ -n "${GITHUB_TOKEN:-}" ]]; then
