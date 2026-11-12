@@ -4,3 +4,4 @@ deploy-initial.zip
 .env.deploy
 .DS_Store
 .superpowers/
+*.tsbuildinfo

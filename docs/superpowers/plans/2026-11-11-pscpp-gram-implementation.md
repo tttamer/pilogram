@@ -12,7 +12,7 @@
 
 ## Global Constraints
 
-- Zero authentication or user management: app opens directly into the timeline on iPhone Safari / Home Screen PWA (`max-w-[430px]` mobile shell, dark mode native Instagram aesthetic).
+- Zero authentication or user management: app opens directly into the timeline on iPhone Safari (including iPhone 14: 390px viewport, responsive full-width mobile container up to desktop max-w-md / max-w-lg, dark mode native Instagram aesthetic).
 - Zero LLM API keys or external AI dependencies on the cPanel server: PHP 8 scripts only read/write flat JSON files in `content/`.
 - Every study post is a self-contained JSON file in `public/content/posts/<id>.json` linked to a fake persona in `public/content/personas.json` representing one of the 7 PSCPP syllabus sections.
 - Reaching `unseen_remaining === 0` must immediately reshuffle the timeline for uninterrupted infinite scrolling AND notify `api/exhausted.php` (`needs_generation: true`, `completed_cycles++`).
