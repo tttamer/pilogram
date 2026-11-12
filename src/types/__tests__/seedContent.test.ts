@@ -6,6 +6,7 @@ import {
   isValidExternalPost,
   type Persona,
   type ServerLoopState,
+  type SectionId,
 } from '../post';
 
 const contentRoot = path.resolve(__dirname, '../../../public/content');
@@ -19,7 +20,7 @@ describe('Seed Content & Schema Validators', () => {
 
     const sections = new Set(personas.map((p) => p.section_id));
     for (let i = 1; i <= 7; i++) {
-      expect(sections.has(`sec-${i}`)).toBe(true);
+      expect(sections.has(`sec-${i}` as SectionId)).toBe(true);
     }
   });
 
