@@ -1,0 +1,32 @@
+{
+  "id": "2026-11-11-sec5-bowditch-006",
+  "created_at": "2026-11-11T22:05:00Z",
+  "batch_cycle": 1,
+  "persona_id": "migueles.bowditch",
+  "section_id": "sec-5",
+  "source": {
+    "book": "Miguens – Navegação: A Ciência e a Arte (Vol. I & III)",
+    "chapter": "Navegação Radar e ARPA",
+    "pages": "Cap. 14 & 40",
+    "anchor_concept": "Estabilização Sea-Stabilized vs Ground-Stabilized no ARPA"
+  },
+  "format": "flashcard_carousel",
+  "slides": [
+    {
+      "type": "question",
+      "title": "Slide 1/2 • ARPA para Anticolisão (RIPEAM)",
+      "prompt": "Para avaliação de risco de colisão e manobra segundo o RIPEAM, o vetor de movimento no ARPA deve estar estabilizado em relação à ÁGUA (Sea) ou ao FUNDO (Ground)?"
+    },
+    {
+      "type": "answer",
+      "title": "Slide 2/2 • Sea-Stabilized para Anticolisão!",
+      "body": "Estabilizado na ÁGUA (Sea-Stabilized, via odômetro/bússola) mostra o rumo e a velocidade do alvo na massa d'água (aspecto real das luzes de navegação). Já o Ground-Stabilized (GPS/Doppler) é ideal para navegação costeira e controle de abatimento/corrente em canais.",
+      "exam_tip": "A IMO e o Miguens destacam que usar Ground-Stabilized em áreas de forte corrente pode induzir erro grave na estimativa do aspecto (proa) do navio-alvo."
+    }
+  ],
+  "infographic": null,
+  "video": null,
+  "caption": "Diferença vital entre Sea-Stabilized e Ground-Stabilized no ARPA/Radar. #Miguens #Bowditch #ARPA #PSCPP",
+  "tags": ["Navegação", "Miguens", "ARPA", "Radar"],
+  "difficulty": 2
+}
