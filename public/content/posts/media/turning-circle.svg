@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
-  <rect width="400" height="300" rx="16" fill="#090D16"/>
-  <path d="M90 260 L90 150 C90 65 290 65 290 160 C290 240 140 240 140 160" stroke="#38BDF8" stroke-width="3" stroke-dasharray="6 4" fill="none"/>
-  <line x1="50" y1="150" x2="340" y2="150" stroke="#475569" stroke-width="1.5"/>
-  <line x1="90" y1="75" x2="290" y2="75" stroke="#F59E0B" stroke-width="2"/>
-  <text x="145" y="65" fill="#F59E0B" font-size="12" font-family="sans-serif">Diâmetro Tático (TD)</text>
-  <text x="20" y="115" fill="#A855F7" font-size="12" font-family="sans-serif">Avanço (Advance)</text>
-</svg>
