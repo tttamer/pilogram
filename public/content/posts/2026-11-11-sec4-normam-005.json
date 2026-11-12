@@ -1,0 +1,32 @@
+{
+  "id": "2026-11-11-sec4-normam-005",
+  "created_at": "2026-11-11T22:04:00Z",
+  "batch_cycle": 1,
+  "persona_id": "legislacao.normam",
+  "section_id": "sec-4",
+  "source": {
+    "book": "Lei 9.537/97 (LESTA) & NORMAM-311/DPC",
+    "chapter": "Cap. III – Do Serviço de Praticagem",
+    "pages": "Art. 12 a 15",
+    "anchor_concept": "Indisponibilidade e Impossibilidade de Recusa do Prático"
+  },
+  "format": "flashcard_flip",
+  "slides": [
+    {
+      "type": "question",
+      "title": "LESTA Art. 13 • Deveres do Prático",
+      "prompt": "Pode o Prático recusar-se à prestação do serviço de praticagem para o qual foi escalado na Zona de Praticagem?"
+    },
+    {
+      "type": "answer",
+      "title": "NÃO — Salvo Perigo à Segurança ou Motivo Justo",
+      "body": "O serviço de praticagem é atividade essencial e deve estar permanentemente disponível. O Prático NÃO pode recusar-se à prestação do serviço, sob pena de suspensão do certificado de habilitação ou, em caso de reincidência, cancelamento.",
+      "exam_tip": "A LESTA prevê que a Autoridade Marítima pode fixar o preço do serviço caso não haja acordo e para assegurar a continuidade do serviço."
+    }
+  ],
+  "infographic": null,
+  "video": null,
+  "caption": "Artigo cravado em toda prova do PSCPP. Toque para conferir a sanção exata da LESTA. #LESTA #NORMAM #PSCPP",
+  "tags": ["Legislação", "LESTA", "NORMAM311"],
+  "difficulty": 1
+}

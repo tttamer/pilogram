@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-12-sec7-colregs-015-overtaking",
+  "created_at": "2026-11-12T10:00:00Z",
+  "batch_cycle": 1,
+  "persona_id": "ripeam.colregs",
+  "section_id": "sec-7",
+  "source": {
+    "book": "IMO. COLREG 2018 (RIPEAM-72)",
+    "chapter": "Part B • Section II – Rule 13",
+    "pages": "p. 13 • Rule 13",
+    "anchor_concept": "Overtaking (Embarcação Alcançando / Ultrapassagem)"
+  },
+  "format": "flashcard_flip",
+  "slides": [
+    {
+      "type": "question",
+      "title": "COLREG Rule 13 • Overtaking (Ultrapassagem)",
+      "prompt": "Qual é a definição exata do setor de ultrapassagem segundo a Regra 13(b), o que se avista à noite e qual é a consequência inegociável da alínea (d) sobre alterações de marcação?",
+      "media_url": "./content/posts/media/colregs-rule13-overtaking.png"
+    },
+    {
+      "type": "answer",
+      "title": "> 22,5° para ré do través • Luz de Alcançado • Regra 13(d)",
+      "body": "TRECHO LITERAL • IMO COLREG 2018 Rule 13:\n\"(a) Notwithstanding anything contained in the Rules of Part B, Sections I and II any vessel overtaking any other shall keep out of the way of the vessel being overtaken.\n(b) A vessel shall be deemed to be overtaking when coming up with another vessel from a direction more than 22.5 degrees abaft her beam, that is, in such a position with reference to the vessel she is overtaking, that at night she would be able to see only the sternlight of that vessel but neither of her sidelights.\n(c) When a vessel is in any doubt as to whether she is overtaking another, she shall assume that this is the case and act accordingly.\n(d) Any subsequent alteration of the bearing between the two vessels shall not make the overtaking vessel a crossing vessel within the meaning of these Rules or relieve her of the duty of keeping clear of the overtaken vessel until she is finally past and clear.\"",
+      "exam_tip": "REGRA DE OURO DO PSCPP: 'Uma vez alcançador, sempre alcançador!'. Mesmo que a marcação varie e a embarcação ultrapassadora veja a luz de bordo da outra, ela JAMAIS se transforma em situação de rumos cruzados. O dever de manobra permanece até estar inteiramente livre e safa (past and clear)."
+    }
+  ],
+  "infographic": null,
+  "video": null,
+  "caption": "Toque no card para virar! COLREG Rule 13 na íntegra: setor de 22,5° para ré do través e a regra pétrea da alínea (d). #COLREG #RIPEAM #Regra13 #Ultrapassagem #Overtaking #PSCPP",
+  "tags": ["RIPEAM", "COLREGs", "Regra13", "Ultrapassagem", "Overtaking"],
+  "difficulty": 2
+}

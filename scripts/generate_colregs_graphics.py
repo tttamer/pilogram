@@ -13,7 +13,6 @@ from PIL import Image, ImageDraw, ImageFont
 W, H = 800, 600
 
 def get_font(size, bold=False):
-    # Try system fonts on macOS
     font_paths = [
         "/System/Library/Fonts/SFNS.ttf",
         "/System/Library/Fonts/SFCompact.ttf",
@@ -27,6 +26,33 @@ def get_font(size, bold=False):
         except Exception:
             continue
     return ImageFont.load_default()
+
+def draw_text_lines(draw, center_x, center_y, text, fill, font, line_spacing=18):
+    """Draw multiline text centered at (center_x, center_y)"""
+    lines = text.split("\n")
+    total_h = len(lines) * line_spacing
+    start_y = center_y - total_h / 2
+    for i, line in enumerate(lines):
+        y = start_y + i * line_spacing + line_spacing / 2
+        draw.text((center_x, y), line, fill=fill, font=font, anchor="mm")
+
+def draw_text_left(draw, start_x, center_y, text, fill, font, line_spacing=18):
+    """Draw multiline text left-aligned with center_y"""
+    lines = text.split("\n")
+    total_h = len(lines) * line_spacing
+    start_y = center_y - total_h / 2
+    for i, line in enumerate(lines):
+        y = start_y + i * line_spacing + line_spacing / 2
+        draw.text((start_x, y), line, fill=fill, font=font, anchor="lm")
+
+def draw_text_right(draw, end_x, center_y, text, fill, font, line_spacing=18):
+    """Draw multiline text right-aligned with center_y"""
+    lines = text.split("\n")
+    total_h = len(lines) * line_spacing
+    start_y = center_y - total_h / 2
+    for i, line in enumerate(lines):
+        y = start_y + i * line_spacing + line_spacing / 2
+        draw.text((end_x, y), line, fill=fill, font=font, anchor="rm")
 
 def draw_vessel(draw, x, y, angle_deg, length=60, width=22, hull_color="#1E293B", stroke_color="#64748B"):
     """Draw a ship hull polygon oriented at angle_deg (0 = pointing UP) with sidelights"""
@@ -85,9 +111,7 @@ def make_rule14():
     draw.line([30, 85, W-30, 85], fill="#334155", width=1)
 
     # Meeting reciprocal courses
-    # Vessel 1 (heading 000° UP)
     v1_x, v1_y = 400, 440
-    # Vessel 2 (heading 180° DOWN)
     v2_x, v2_y = 400, 190
 
     # Reciprocal course dashed line
@@ -99,22 +123,20 @@ def make_rule14():
     draw_vessel(draw, v2_x, v2_y, 180, length=70, width=26)
 
     # Labels for vessels
-    draw.text((320, 440), "Navio A\n(Propulsão)", fill="#F8FAFC", font=f_body, anchor="rm")
-    draw.text((320, 190), "Navio B\n(Propulsão)", fill="#F8FAFC", font=f_body, anchor="rm")
+    draw_text_right(draw, 320, 440, "Navio A\n(Propulsão)", "#F8FAFC", f_body)
+    draw_text_right(draw, 320, 190, "Navio B\n(Propulsão)", "#F8FAFC", f_body)
 
     # Alter course to Starboard arcs/arrows
-    # For Navio A: alters to Starboard (East / Right)
     draw.arc([400, 360, 520, 460], start=270, end=360, fill="#10B981", width=4)
     draw.polygon([(460, 355), (475, 360), (460, 365)], fill="#10B981")
-    draw.text((540, 410), "Guina para BORESTE (BE)\nPassa Bombordo com Bombordo\nApito: 1 curto (•)", fill="#10B981", font=f_body, anchor="lm")
+    draw_text_left(draw, 540, 410, "Guina para BORESTE (BE)\nPassa Bombordo com Bombordo\nApito: 1 curto (•)", "#10B981", f_body)
 
-    # For Navio B: alters to Starboard (West / Left from its perspective, which is screen right)
     draw.arc([280, 170, 400, 270], start=90, end=180, fill="#10B981", width=4)
     draw.polygon([(340, 275), (325, 270), (340, 265)], fill="#10B981")
-    draw.text((260, 220), "Guina para BORESTE (BE)\nPassa Bombordo com Bombordo\nApito: 1 curto (•)", fill="#10B981", font=f_body, anchor="rm")
+    draw_text_right(draw, 260, 220, "Guina para BORESTE (BE)\nPassa Bombordo com Bombordo\nApito: 1 curto (•)", "#10B981", f_body)
 
     # Central Box: What each sees at night
-    draw.rectangle([210, 265, 590, 345], fill="#0F172A", outline="#38BDF8", width=2)
+    draw.rectangle([180, 265, 620, 345], fill="#0F172A", outline="#38BDF8", width=2)
     draw.text((400, 285), "VISÃO NOTURNA: LUZES DE MASTRO EM LINHA", fill="#F8FAFC", font=f_body, anchor="mm")
     draw.text((400, 308), "Ambos avistam simultaneamente: BB (Vermelha) E BE (Verde)", fill="#E2E8F0", font=f_small, anchor="mm")
     draw.text((400, 328), "Regra 14(c): Na dúvida, presuma que a situação existe e manobre!", fill="#FACC15", font=f_small, anchor="mm")
@@ -145,48 +167,44 @@ def make_rule15():
     draw.text((W/2, 65), "RIPEAM REGRA 15 • SITUAÇÃO DE RUMOS CRUZADOS", fill="#94A3B8", font=f_sub, anchor="mm")
     draw.line([30, 85, W-30, 85], fill="#334155", width=1)
 
-    # Vessel A (Give-way / Obrigada) heading UP 000°
     va_x, va_y = 280, 410
-    # Vessel B (Stand-on / Preferencial) heading WEST 270° crossing from starboard
     vb_x, vb_y = 620, 250
 
     # Draw courses
-    # A course dashed line ahead
     draw.line([va_x, va_y-40, va_x, 150], fill="#64748B", width=2)
-    # B course dashed line ahead
     draw.line([vb_x-40, vb_y, 160, vb_y], fill="#64748B", width=2)
 
     # Collision point
     draw.ellipse([va_x-8, vb_y-8, va_x+8, vb_y+8], fill="#EF4444", outline="#F8FAFC")
-    draw.text((va_x+15, vb_y-15), "Ponto de Colisão\n(Se ninguém manobrar)", fill="#EF4444", font=f_small, anchor="lb")
+    draw_text_left(draw, va_x+15, vb_y-15, "Ponto de Colisão\n(Se ninguém manobrar)", "#EF4444", f_small, line_spacing=14)
 
     # Draw vessels
     draw_vessel(draw, va_x, va_y, 0, length=70, width=26)
     draw_vessel(draw, vb_x, vb_y, 270, length=70, width=26)
 
     # Labels for Navio A (Give-way)
-    draw.rectangle([40, 370, 220, 460], fill="#18181B", outline="#EF4444", width=2)
-    draw.text((130, 390), "NAVIO A (OBRIGADO)", fill="#EF4444", font=f_body, anchor="mm")
-    draw.text((130, 410), "GIVE-WAY VESSEL", fill="#F87171", font=f_small, anchor="mm")
-    draw.text((130, 435), "Vê Navio B por BORESTE\n(Avista luz Vermelha de B)", fill="#CBD5E1", font=f_small, anchor="mm")
+    draw.rectangle([30, 365, 230, 465], fill="#18181B", outline="#EF4444", width=2)
+    draw.text((130, 385), "NAVIO A (OBRIGADO)", fill="#EF4444", font=f_body, anchor="mm")
+    draw.text((130, 405), "GIVE-WAY VESSEL", fill="#F87171", font=f_small, anchor="mm")
+    draw_text_lines(draw, 130, 435, "Vê Navio B por BORESTE\n(Avista luz Vermelha de B)", "#CBD5E1", f_small, line_spacing=14)
 
     # Action for Navio A: turn starboard, pass under stern of B
     draw.arc([va_x, 320, 520, 440], start=270, end=360, fill="#10B981", width=4)
     draw.line([520, 380, 520, 290], fill="#10B981", width=4)
     draw.arc([420, 200, 520, 290], start=0, end=90, fill="#10B981", width=4)
     draw.polygon([(425, 205), (410, 200), (425, 195)], fill="#10B981")
-    draw.text((450, 460), "Manobra Obrigatória de A:\nGuinar para Boreste e passar pela POPA de B\n(Evitar cruzar pela proa!)", fill="#10B981", font=f_body, anchor="lm")
+    draw_text_left(draw, 450, 460, "Manobra Obrigatória de A:\nGuinar para Boreste e passar pela POPA de B\n(Evitar cruzar pela proa!)", "#10B981", f_body, line_spacing=18)
 
     # Labels for Navio B (Stand-on)
-    draw.rectangle([520, 110, 750, 200], fill="#18181B", outline="#10B981", width=2)
-    draw.text((635, 130), "NAVIO B (PREFERENCIAL)", fill="#10B981", font=f_body, anchor="mm")
-    draw.text((635, 150), "STAND-ON VESSEL", fill="#34D399", font=f_small, anchor="mm")
-    draw.text((635, 175), "Vê Navio A por BOMBORDO\n(Avista luz Verde de A)", fill="#CBD5E1", font=f_small, anchor="mm")
+    draw.rectangle([510, 105, 760, 205], fill="#18181B", outline="#10B981", width=2)
+    draw.text((635, 125), "NAVIO B (PREFERENCIAL)", fill="#10B981", font=f_body, anchor="mm")
+    draw.text((635, 145), "STAND-ON VESSEL", fill="#34D399", font=f_small, anchor="mm")
+    draw_text_lines(draw, 635, 175, "Vê Navio A por BOMBORDO\n(Avista luz Verde de A)", "#CBD5E1", f_small, line_spacing=14)
 
     # Critical Trap: Rule 17(c)
-    draw.rectangle([40, 220, 220, 310], fill="#1E1B4B", outline="#6366F1", width=1.5)
-    draw.text((130, 240), "⚠️ ATENÇÃO REGRA 17(c)", fill="#FACC15", font=f_body, anchor="mm")
-    draw.text((130, 270), "Se B tiver que manobrar,\nNÃO deve guinar para BB\npara navio a seu bombordo!", fill="#E0E7FF", font=f_small, anchor="mm")
+    draw.rectangle([30, 215, 230, 315], fill="#1E1B4B", outline="#6366F1", width=2)
+    draw.text((130, 235), "⚠️ ATENÇÃO REGRA 17(c)", fill="#FACC15", font=f_body, anchor="mm")
+    draw_text_lines(draw, 130, 275, "Se B tiver que manobrar,\nNÃO deve guinar para BB\npara navio a seu bombordo!", "#E0E7FF", f_small, line_spacing=14)
 
     # Footer note with verbatim text excerpt
     draw.rectangle([20, 510, W-20, 580], fill="#020617", outline="#1E293B")
@@ -214,7 +232,6 @@ def make_rule13():
     draw.text((W/2, 65), "RIPEAM REGRA 13 • EMBARCAÇÃO ALCANÇANDO (ULTRAPASSAGEM)", fill="#94A3B8", font=f_sub, anchor="mm")
     draw.line([30, 85, W-30, 85], fill="#334155", width=1)
 
-    # Center vessel being overtaken
     vx, vy = 400, 240
     draw_vessel(draw, vx, vy, 0, length=80, width=28)
     draw.text((vx, vy-55), "NAVIO ALCANÇADO (Stand-on)", fill="#F8FAFC", font=f_body, anchor="mm")
@@ -225,25 +242,24 @@ def make_rule13():
     draw.text((640, vy-12), "Linha do Través (90° BE)", fill="#94A3B8", font=f_small, anchor="ra")
 
     # Sector of Overtaking: > 22.5° abaft the beam (Sector from 112.5° to 247.5° = arc of 135° sternlight)
-    # Draw arc representing Sternlight (White)
     draw.pieslice([vx-180, vy-180, vx+180, vy+180], start=22.5+90, end=180-22.5+90, fill="#1E293B", outline="#F8FAFC")
-    draw.text((vx, vy+120), "SETOR DE ULTRAPASSAGEM\n(Arco de 135° da Luz de Alcançado)", fill="#F8FAFC", font=f_body, anchor="mm")
-    draw.text((vx, vy+155), "Mais de 22,5° (2 quartas) para ré do través\nÀ noite: AVISTA APENAS A LUZ DE ALCANÇADO (Branca)\nNÃO vê nenhuma das luzes de bordo (nem BB nem BE)", fill="#93C5FD", font=f_small, anchor="mm")
+    draw_text_lines(draw, vx, vy+120, "SETOR DE ULTRAPASSAGEM\n(Arco de 135° da Luz de Alcançado)", "#F8FAFC", f_body, line_spacing=18)
+    draw_text_lines(draw, vx, vy+165, "Mais de 22,5° (2 quartas) para ré do través\nÀ noite: AVISTA APENAS A LUZ DE ALCANÇADO (Branca)\nNÃO vê nenhuma das luzes de bordo (nem BB nem BE)", "#93C5FD", f_small, line_spacing=14)
 
     # Overtaking vessel approaching
     ov_x, ov_y = 520, 440
     draw_vessel(draw, ov_x, ov_y, 345, length=65, width=24)
-    draw.text((ov_x+20, ov_y), "NAVIO ALCANÇADOR\n(Give-way Vessel)\nDEVER ABSOLUTO DE MANOBRAR", fill="#FACC15", font=f_body, anchor="lm")
+    draw_text_left(draw, ov_x+20, ov_y, "NAVIO ALCANÇADOR\n(Give-way Vessel)\nDEVER ABSOLUTO DE MANOBRAR", "#FACC15", f_body, line_spacing=18)
 
     # Arrow showing keeping clear
     draw.arc([ov_x-60, ov_y-160, ov_x+60, ov_y], start=180, end=270, fill="#10B981", width=3)
     draw.polygon([(ov_x-65, ov_y-100), (ov_x-60, ov_y-115), (ov_x-55, ov_y-100)], fill="#10B981")
 
     # Trap rule box: Rule 13(d)
-    draw.rectangle([40, 370, 290, 480], fill="#0F172A", outline="#F43F5E", width=1.5)
-    draw.text((165, 390), "⚠️ REGRA DE OURO • 13(d)", fill="#F43F5E", font=f_body, anchor="mm")
-    draw.text((165, 415), '"Uma vez alcançador, sempre alcançador"', fill="#FDE047", font=f_small, anchor="mm")
-    draw.text((165, 445), "Nenhuma alteração posterior de\nmarcação transforma o alcançador\nem rumo cruzado!", fill="#CBD5E1", font=f_small, anchor="mm")
+    draw.rectangle([30, 365, 300, 485], fill="#0F172A", outline="#F43F5E", width=2)
+    draw.text((165, 385), "⚠️ REGRA DE OURO • 13(d)", fill="#F43F5E", font=f_body, anchor="mm")
+    draw.text((165, 410), '"Uma vez alcançador, sempre alcançador"', fill="#FDE047", font=f_small, anchor="mm")
+    draw_text_lines(draw, 165, 448, "Nenhuma alteração posterior de\nmarcação transforma o alcançador\nem rumo cruzado!", "#CBD5E1", f_small, line_spacing=14)
 
     # Footer note with verbatim text excerpt
     draw.rectangle([20, 510, W-20, 580], fill="#020617", outline="#1E293B")
@@ -271,7 +287,6 @@ def make_rule18():
     draw.text((W/2, 65), "RIPEAM REGRA 18 • RESPONSABILIDADES ENTRE EMBARCAÇÕES", fill="#94A3B8", font=f_sub, anchor="mm")
     draw.line([30, 85, W-30, 85], fill="#334155", width=1)
 
-    # Hierarchy ladder: from top (highest priority / most privileged) to bottom (lowest / keeps out of way of everyone above)
     items = [
         ("1. NUC (Sem Governo)", "Not Under Command • Regra 27(a)", "#EF4444", "Luzes: 2 Vermelhas 360° | Dia: 2 Esferas"),
         ("2. RAM (Manobra Restrita)", "Restricted in Ability to Manoeuvre • Regra 27(b)", "#F97316", "Luzes: Vermelha-Branca-Vermelha | Dia: Esfera-Losango-Esfera"),
@@ -286,8 +301,7 @@ def make_rule18():
     row_h = 50
     for idx, (title, desc, color, lights) in enumerate(items):
         y = top_y + idx * row_h
-        # Priority Badge
-        draw.rectangle([40, y, 760, y+42], fill="#0F172A", outline=color, width=1.5)
+        draw.rectangle([40, y, 760, y+42], fill="#0F172A", outline=color, width=2)
         draw.text((55, y+21), title, fill=color, font=f_body, anchor="lm")
         draw.text((320, y+21), desc, fill="#E2E8F0", font=f_small, anchor="lm")
         draw.text((745, y+21), lights, fill="#94A3B8", font=f_small, anchor="rm")

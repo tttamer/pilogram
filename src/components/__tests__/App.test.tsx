@@ -26,7 +26,9 @@ describe('PSCPP-Gram Responsive iPhone 14 UI', () => {
     expect(postArticle).not.toBeNull();
     const flipBtn = within(postArticle!).getByRole('button', { name: /Virar Card/i });
     fireEvent.click(flipBtn);
-    expect(within(postArticle!).getAllByText(/2 Vermelhas/i).length).toBeGreaterThan(0);
+    expect(
+      within(postArticle!).getAllByText(/Voltar para Pergunta/i).length
+    ).toBeGreaterThan(0);
 
     const loopBtn = screen.getByRole('button', {
       name: /Concluir Timeline & Gerar Novos Posts/i,

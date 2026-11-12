@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-12-sec7-colregs-016-hierarchy",
+  "created_at": "2026-11-12T10:01:00Z",
+  "batch_cycle": 1,
+  "persona_id": "ripeam.colregs",
+  "section_id": "sec-7",
+  "source": {
+    "book": "IMO. COLREG 2018 (RIPEAM-72)",
+    "chapter": "Part B • Section II – Rule 18",
+    "pages": "p. 15 • Rule 18",
+    "anchor_concept": "Hierarchy of Responsibility (Responsabilidades entre Embarcações)"
+  },
+  "format": "flashcard_flip",
+  "slides": [
+    {
+      "type": "question",
+      "title": "COLREG Rule 18 • Responsibilities between Vessels",
+      "prompt": "Qual é a escada hierárquica oficial de prioridade de manobra do RIPEAM/COLREG e quais regras expressas no caput se sobrepõem e anulam essa hierarquia?",
+      "media_url": "./content/posts/media/colregs-rule18-hierarchy.png"
+    },
+    {
+      "type": "answer",
+      "title": "NUC > RAM > CBD > Pesca > Vela > Propulsão Mecânica",
+      "body": "TRECHO LITERAL • IMO COLREG 2018 Rule 18:\n\"Except where Rules 9, 10 and 13 otherwise require:\n(a) A power-driven vessel underway shall keep out of the way of:\n  (i) a vessel not under command;\n  (ii) a vessel restricted in her ability to manoeuvre;\n  (iii) a vessel engaged in fishing;\n  (iv) a sailing vessel.\n(b) A sailing vessel underway shall keep out of the way of:\n  (i) a vessel not under command;\n  (ii) a vessel restricted in her ability to manoeuvre;\n  (iii) a vessel engaged in fishing.\n(c) A vessel engaged in fishing... shall, so far as possible, keep out of the way of:\n  (i) a vessel not under command;\n  (ii) a vessel restricted in her ability to manoeuvre.\n(d)(i) Any vessel other than NUC or RAM shall... avoid impeding the safe passage of a vessel constrained by her draught (CBD)...\"\n\nCLÁUSULA DE EXCEÇÃO (CAPUT):\n\"Except where Rules 9, 10 and 13 otherwise require\"",
+      "exam_tip": "PEGADINHA FAVORITA DE TODAS AS BANCAS DE PRATICAGEM: A Regra 13 (Ultrapassagem) se sobrepõe à Regra 18! Se uma embarcação à vela ou um pesqueiro estiver ULTRAPASSANDO um navio de propulsão mecânica, o veleiro/pesqueiro É A EMBARCAÇÃO OBRIGADA e deve manobrar para manter-se fora do caminho do navio ultrapassado!"
+    }
+  ],
+  "infographic": null,
+  "video": null,
+  "caption": "Toque para virar! A escada de prioridades da Regra 18 do RIPEAM/COLREG decorada e a cláusula de exceção das Regras 9, 10 e 13. #COLREG #RIPEAM #Regra18 #Hierarquia #Praticagem #PSCPP",
+  "tags": ["RIPEAM", "COLREGs", "Regra18", "Hierarquia", "Prioridade"],
+  "difficulty": 2
+}

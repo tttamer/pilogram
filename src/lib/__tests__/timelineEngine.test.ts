@@ -50,7 +50,7 @@ describe('timelineEngine — Weighted Randomization & Loop Logic', () => {
       section_filter: 'all',
       seen_ids: allIds,
       bookmarked_ids: [allIds[0]],
-      limit: 10,
+      limit: Math.max(10, studyPosts.length + 2),
     });
 
     expect(result.cycle_reset_triggered).toBe(true);

@@ -1,0 +1,33 @@
+{
+  "id": "2026-11-12-sec7-colregs-013-headon",
+  "created_at": "2026-11-12T09:58:00Z",
+  "batch_cycle": 1,
+  "persona_id": "ripeam.colregs",
+  "section_id": "sec-7",
+  "source": {
+    "book": "IMO. COLREG 2018 (RIPEAM-72)",
+    "chapter": "Part B • Section II – Rule 14",
+    "pages": "p. 13 • Rule 14",
+    "anchor_concept": "Head-on Situation (Situação de Roda a Roda)"
+  },
+  "format": "flashcard_flip",
+  "slides": [
+    {
+      "type": "question",
+      "title": "COLREG Rule 14 • Head-on Situation",
+      "prompt": "Dois navios de propulsão mecânica navegam em rumos diretamente opostos com risco de abalroamento. O que diz a Regra 14 sobre: (1) Para qual bordo cada um deve guinar? (2) Por qual bordo do outro devem passar? (3) O que fazer em caso de dúvida?",
+      "media_url": "./content/posts/media/colregs-rule14-headon.png"
+    },
+    {
+      "type": "answer",
+      "title": "Starboard (BE) • Pass Port to Port • Doubt: Assume Head-on",
+      "body": "TRECHO LITERAL • IMO COLREG 2018 Rule 14:\n\"(a) When two power-driven vessels are meeting on reciprocal or nearly reciprocal courses so as to involve risk of collision each shall alter her course to starboard so that each shall pass on the port side of the other.\n(b) Such a situation shall be deemed to exist when a vessel sees the other ahead... and by night she could see the masthead lights of the other in a line... and/or both sidelights...\n(c) When a vessel is in any doubt... she shall assume that it does exist and act accordingly.\"\n\nRESUMO DE PROVA:\n• Ambas guinam para BORESTE (starboard).\n• Passam BOMBORDO COM BOMBORDO (port to port).\n• Sinal sonoro de manobra: 1 apito curto (•) segundo a Regra 34(a).",
+      "exam_tip": "PEGADINHA DO PSCPP: A Regra 14 aplica-se EXCLUSIVAMENTE a duas embarcações de propulsão mecânica. Se uma for veleiro ou pesqueiro, aplica-se a hierarquia da Regra 18!"
+    }
+  ],
+  "infographic": null,
+  "video": null,
+  "caption": "COLREG Rule 14 • Situação de Roda a Roda. Trecho literal do IMO 2018 e manobra obrigatória para Boreste. #COLREG #RIPEAM #Regra14 #HeadOn #PSCPP",
+  "tags": ["RIPEAM", "COLREGs", "Regra14", "RodaARoda", "HeadOn"],
+  "difficulty": 1
+}
