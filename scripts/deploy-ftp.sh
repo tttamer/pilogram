@@ -9,7 +9,7 @@ if [[ -f ".env.deploy" ]]; then
   source .env.deploy
   set +a
 else
-  echo "Error: .env.deploy not found. Copy .env.example to .env.deploy and fill in FTP credentials."
+  echo "Error: .env.deploy not found. Fill in credentials in .env.deploy first."
   exit 1
 fi
 
@@ -22,7 +22,9 @@ echo "==> [1/3] Committing new or updated posts to Git..."
 git add public/content/ src/ || true
 if ! git diff --cached --quiet; then
   git commit -m "content: add/update PSCPP-Gram study posts ($(date -u +%Y-%m-%dT%H:%M:%SZ))"
-  if git remote get-url origin >/dev/null 2>&1; then
+  if [[ -n "${GITHUB_TOKEN:-}" ]]; then
+    git push "https://${GITHUB_TOKEN}@github.com/tttamer/pilogram.git" main
+  elif git remote get-url origin >/dev/null 2>&1; then
     git push origin main
   fi
 fi
