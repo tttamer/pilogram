@@ -57,6 +57,26 @@ def ensure_remote_dir(ftp: ftplib.FTP, path: str):
 
 with ftplib.FTP(host, timeout=30) as ftp:
     ftp.login(user, passwd)
+
+    # 1. Clean obsolete posts, media and old hashed assets from remote
+    for sub in ["content/posts", "content/posts/media", "assets"]:
+        try:
+            remote_sub = f"{remote_root}/{sub}".lstrip("/")
+            for rf in ftp.nlst(remote_sub):
+                fname = os.path.basename(rf)
+                if fname in [".", ".."]:
+                    continue
+                local_match = dist_dir / sub / fname
+                if not local_match.exists():
+                    try:
+                        ftp.delete(f"{remote_sub}/{fname}")
+                        print(f"Removed obsolete remote file: {sub}/{fname}")
+                    except Exception:
+                        pass
+        except Exception:
+            pass
+
+    # 2. Upload changed/new files
     for file_path in dist_dir.rglob("*"):
         if file_path.is_dir():
             continue
