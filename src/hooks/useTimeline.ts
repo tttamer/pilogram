@@ -41,9 +41,24 @@ const BUNDLED_STATE = stateData as ServerLoopState;
 export function useTimeline() {
   const memory = useStudyMemory();
   const [sectionFilter, setSectionFilter] = useState<SectionFilter>('all');
-  const [posts, setPosts] = useState<TimelinePost[]>([]);
-  const [personas, setPersonas] = useState<Record<string, Persona>>({});
-  const [serverState, setServerState] = useState<ServerLoopState>(BUNDLED_STATE);
+
+  const initialFeed = buildTimelineBatch(
+    BUNDLED_STUDY_POSTS,
+    BUNDLED_EXTERNAL_POSTS,
+    BUNDLED_PERSONAS,
+    {
+      seed: memory.seed,
+      section_filter: 'all',
+      seen_ids: memory.seenIds,
+      bookmarked_ids: memory.bookmarkedIds,
+      limit: 12,
+    },
+    BUNDLED_STATE
+  );
+
+  const [posts, setPosts] = useState<TimelinePost[]>(() => initialFeed.posts);
+  const [personas, setPersonas] = useState<Record<string, Persona>>(() => initialFeed.personas);
+  const [serverState, setServerState] = useState<ServerLoopState>(() => initialFeed.server_state);
   const [loopBanner, setLoopBanner] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
